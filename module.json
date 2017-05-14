@@ -1,0 +1,53 @@
+{
+    "autoload": true,
+    "singleton": true,
+    "dependencies": [],
+    "category": "developers_stuff",
+    "author": "Robert Gebauer",
+    "moduleName": "HTTPBridge",
+    "version": "0.0.1",
+    "maturity": "beta",
+    "defaults": {
+        "title": "HTTP Bridge",
+        "description": "Publishes all 'level:change' events of chosen devices to a HTTP-Server using POST. Can be used to build bridges to other ecosystems.",
+        "devicesToTrack": [],
+        "url": ""
+    },
+    "options": {
+        "fields": {
+            "url": {
+                "label": "URL to POST to"
+            },
+            "devicesToTrack": {
+                "label": "Devices",
+                "fields": {
+                    "item": {
+                        "type": "select",
+                        "datasource": "namespaces",
+                        "field": "optionLabels",
+                        "optionLabels": "namespaces:devices_all:deviceName"
+                    }
+                }
+            }
+        }
+    },
+    "schema": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "required": true
+            },
+            "devicesToTrack": {
+                "type": "array",
+                "items": {
+                    "field": "enum",
+                    "datasource": "namespaces",
+                    "enum": "namespaces:devices_all:deviceId",
+                    "required": true
+                }
+            }
+        },
+        "required": true,
+        "type": "object"
+    }
+}
