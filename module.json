@@ -9,7 +9,7 @@
     "maturity": "beta",
     "defaults": {
         "title": "HTTP Bridge",
-        "description": "Publishes all 'level:change' events of chosen devices to a HTTP-Server using POST. Can be used to build bridges to other ecosystems.",
+        "description": "Publishes all 'change:metrics:level' events of chosen devices to a HTTP-Server using POST. Can be used to build bridges to other ecosystems.",
         "devicesToTrack": [],
         "url": ""
     },
