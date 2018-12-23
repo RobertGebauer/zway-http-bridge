@@ -10,19 +10,19 @@
     "maturity": "stable",
     "icon" : "icon.png",
     "defaults": {
-        "title": "HTTP Bridge",
-        "description": "Publishes all 'change:metrics:level' events of chosen devices to a HTTP-Server using the method POST. This can be used to build bridges to other ecosystems.<br />For a more detailed description with examples please visit <a href='https://github.com/RobertGebauer/zway-http-bridge'>https://github.com/RobertGebauer/zway-http-bridge</a>.",
+        "title": "__app_title__",
+        "description": "__app_descr__",
         "devicesToTrack": [],
         "url": ""
     },
     "options": {
         "fields": {
             "url": {
-                "label": "URL to POST to",
-                "helper" : "Complete URL with schema. Using HTTPS is strongly recommended."
+                "label": "__fields_url_label__",
+                "helper" : "__fields_url_helper__"
             },
             "devicesToTrack": {
-                "label": "Devices",
+                "label": "__fields_devices_label__",
                 "fields": {
                     "item": {
                         "type": "select",
