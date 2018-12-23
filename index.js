@@ -2,7 +2,6 @@ function HTTPBridge(id, controller) {
     HTTPBridge.super_.call(this, id, controller);
 
     this.devicesToTrack = [];
-    this.url = "";
 }
 
 inherits(HTTPBridge, AutomationModule);
@@ -12,10 +11,7 @@ _module = HTTPBridge;
 HTTPBridge.prototype.init = function (config) {
     HTTPBridge.super_.prototype.init.call(this, config);
 
-    var self = this;
-
     this.devicesToTrack = config.devicesToTrack;
-    this.url = config.url;
 
     this.handler = function (vDev) {
         var level = vDev.get("metrics:level");
@@ -36,7 +32,7 @@ HTTPBridge.prototype.init = function (config) {
         var publishItemString = JSON.stringify(publishItem);
 
         http.request({
-            url: self.url,
+            url: config.url,
             method: "POST",
             async: true,
             headers: {
@@ -47,16 +43,15 @@ HTTPBridge.prototype.init = function (config) {
 
     };
 
-    this.devicesToTrack.forEach(function (device) {
-        self.controller.devices.on(device, 'change:metrics:level', self.handler);
-    });
+    this.devicesToTrack.forEach(_.bind(function (device) {
+        this.controller.devices.on(device, 'change:metrics:level', this.handler);
+    }, this));
 };
 
 HTTPBridge.prototype.stop = function () {
     HTTPBridge.super_.prototype.stop.call(this);
-    var self = this;
 
-    this.devicesToTrack.forEach(function (device) {
-        self.controller.devices.off(device, 'change:metrics:level', self.handler);
-    });
+    this.devicesToTrack.forEach(_.bind(function (device) {
+        this.controller.devices.off(device, 'change:metrics:level', this.handler);
+    }, this));
 };
