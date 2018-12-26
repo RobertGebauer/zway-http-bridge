@@ -4,7 +4,7 @@ function HTTPBridge(id, controller) {
     this.devicesToTrack = [];
 }
 
-inherits(HTTPBridge, AutomationModule);
+inherits(HTTPBridge, BaseModule);
 
 _module = HTTPBridge;
 
@@ -44,7 +44,7 @@ HTTPBridge.prototype.init = function (config) {
     };
 
     this.devicesToTrack.forEach(_.bind(function (device) {
-        this.controller.devices.on(device, 'change:metrics:level', this.handler);
+        this.controller.devices.on(device, 'modify:metrics:level', this.handler);
     }, this));
 };
 
@@ -52,6 +52,6 @@ HTTPBridge.prototype.stop = function () {
     HTTPBridge.super_.prototype.stop.call(this);
 
     this.devicesToTrack.forEach(_.bind(function (device) {
-        this.controller.devices.off(device, 'change:metrics:level', this.handler);
+        this.controller.devices.off(device, 'modify:metrics:level', this.handler);
     }, this));
 };

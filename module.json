@@ -1,14 +1,16 @@
 {
     "autoload": true,
     "singleton": true,
-    "dependencies": [],
+    "dependencies": [
+        "BaseModule"
+    ],
     "category": "developers_stuff",
     "author": "Robert Gebauer",
     "moduleName": "HTTPBridge",
-    "homepage" : "https://github.com/RobertGebauer/zway-http-bridge",
+    "homepage": "https://github.com/RobertGebauer/zway-http-bridge",
     "version": "0.0.1",
     "maturity": "stable",
-    "icon" : "icon.png",
+    "icon": "icon.png",
     "defaults": {
         "title": "__app_title__",
         "description": "__app_descr__",
@@ -19,7 +21,7 @@
         "fields": {
             "url": {
                 "label": "__fields_url_label__",
-                "helper" : "__fields_url_helper__"
+                "helper": "__fields_url_helper__"
             },
             "devicesToTrack": {
                 "label": "__fields_devices_label__",
