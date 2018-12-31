@@ -1,11 +1,9 @@
 function HTTPBridge(id, controller) {
     HTTPBridge.super_.call(this, id, controller);
-
     this.devicesToTrack = [];
 }
 
 inherits(HTTPBridge, BaseModule);
-
 _module = HTTPBridge;
 
 HTTPBridge.prototype.init = function (config) {

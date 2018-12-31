@@ -3,5 +3,5 @@
     "app_descr" : "Publishes all 'change:metrics:level' events of chosen devices to a HTTP-Server using the method POST. This can be used to build bridges to other ecosystems.<br />For a more detailed description with examples please visit <a href='https://github.com/RobertGebauer/zway-http-bridge'>https://github.com/RobertGebauer/zway-http-bridge</a>.",
     "fields_url_label": "URL to POST to",
     "fields_url_helper": "Complete URL with schema. Using HTTPS is strongly recommended.",
-    "fields_devices_helper": "Devices"
+    "fields_devices_label": "Devices"
 }
