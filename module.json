@@ -8,7 +8,7 @@
     "author": "Robert Gebauer",
     "moduleName": "HTTPBridge",
     "homepage": "https://github.com/RobertGebauer/zway-http-bridge",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "maturity": "stable",
     "icon": "icon.png",
     "defaults": {
