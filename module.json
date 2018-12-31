@@ -12,8 +12,8 @@
     "maturity": "stable",
     "icon": "icon.png",
     "defaults": {
-        "title": "__app_title__",
-        "description": "__app_descr__",
+        "title": "__m_title__",
+        "description": "__m_descr__",
         "devicesToTrack": [],
         "url": ""
     },
